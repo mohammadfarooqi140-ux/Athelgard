@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aethelgard | The Vault">
+    <title>The Vault | Aethelgard Knives</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="webgl-container"></div>
+
+    <nav class="navbar scrolled">
+        <a href="index.html" class="logo">AETHELGARD</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Origin</a></li>
+            <li><a href="collection.html" class="active">The Vault</a></li>
+            <li><a href="story.html">Heritage</a></li>
+            <li><a href="configurator.html">Forge</a></li>
+        </ul>
+        <button id="open-cart-btn" class="nav-cart-btn">Vault [0]</button>
+    </nav>
+
+    <header class="page-header">
+        <h1 class="hero-title gradient-text">The Vault</h1>
+        <p class="hero-subtitle">Peruse our curated collection of masterworked blades.</p>
+    </header>
+
+    <div class="filters">
+        <button class="filter-btn active" data-filter="all">All Armament</button>
+        <button class="filter-btn" data-filter="balisong">Balisongs</button>
+        <button class="filter-btn" data-filter="karambit">Karambits</button>
+        <button class="filter-btn" data-filter="katana">Katanas</button>
+    </div>
+
+    <!-- Modular Vault Grid -->
+    <main class="collection-grid">
+        <!-- Balisongs -->
+        <article class="glass-card stagger-in" data-category="balisong">
+            <div class="card-img-container">
+                <img src="assets/butterfly.png" alt="Obsidian Balisong">
+            </div>
+            <div class="card-content">
+                <h3 class="card-title gradient-text">Obsidian Prime</h3>
+                <p class="card-desc">The archetypal butterfly knife. Carbon chassis with obsidian-core edge.</p>
+                <div class="card-footer">
+                    <span class="card-price">$55.00</span>
+                    <button class="btn-primary btn-acquire">Acquire</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="glass-card stagger-in" data-category="balisong">
+            <div class="card-img-container">
+                <img src="assets/butterfly.png" style="filter: hue-rotate(180deg) brightness(1.2);" alt="Cerulean Balisong">
+            </div>
+            <div class="card-content">
+                <h3 class="card-title gradient-text">Cerulean Edge</h3>
+                <p class="card-desc">Icy-blue titanium handles. Optimized specifically for fluid motion.</p>
+                <div class="card-footer">
+                    <span class="card-price">$48.00</span>
+                    <button class="btn-primary btn-acquire">Acquire</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="glass-card stagger-in" data-category="balisong">
+            <div class="card-img-container">
+                <img src="assets/butterfly.png" style="filter: invert(1) brightness(1.1) contrast(1.2);" alt="Ivory Balisong">
+            </div>
+            <div class="card-content">
+                <h3 class="card-title gradient-text">Ivory Ghost</h3>
+                <p class="card-desc">Polished bone-white finish. A rare, high-contrast collector's piece.</p>
+                <div class="card-footer">
+                    <span class="card-price">$52.00</span>
+                    <button class="btn-primary btn-acquire">Acquire</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="glass-card stagger-in" data-category="balisong">
+            <div class="card-img-container">
+                <img src="assets/butterfly.png" style="filter: grayscale(1) contrast(1.2);" alt="Mercury Balisong">
+            </div>
+            <div class="card-content">
+                <h3 class="card-title gradient-text">Mercury Stream</h3>
+                <p class="card-desc">Liquid-mercury effect plating. Heavily weighted for stability.</p>
+                <div class="card-footer">
+                    <span class="card-price">$45.00</span>
+                    <button class="btn-primary btn-acquire">Acquire</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- Karambits -->
+        <article class="glass-card stagger-in" data-category="karambit">
+            <div class="card-img-container">
+                <img src="assets/karambit.png" alt="Eclipse Karambit">
+            </div>
+            <div class="card-content">
+                <h3 class="card-title gradient-text">Eclipse Talon</h3>
+                <p class="card-desc">Curved tactical masterwork. Shadow-black blade with grip scales.</p>
+                <div class="card-footer">
+                    <span class="card-price">$58.00</span>
+                    <button class="btn-primary btn-acquire">Acquire</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="glass-card stagger-in" data-category="karambit">
+            <div class="card-img-container">
+                <img src="assets/karambit.png" style="filter: hue-rotate(-50deg) brightness(1.1);" alt="Crimson Karambit">
+            </div>
+            <div class="card-content">
+                <h3 class="card-title gradient-text">Blood Moon</h3>
+                <p class="card-desc">Deep crimson Damascus steel. Forged under a full lunar phase.</p>
+                <div class="card-footer">
+                    <span class="card-price">$62.00</span>
+                    <button class="btn-primary btn-acquire">Acquire</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="glass-card stagger-in" data-category="karambit">
+            <div class="card-img-container">
+                <img src="assets/karambit.png" style="filter: hue-rotate(120deg) saturate(2);" alt="Jade Karambit">
+            </div>
+            <div class="card-content">
+                <h3 class="card-title gradient-text">Jade Serpent</h3>
+                <p class="card-desc">Emerald-veined steel. Incredibly resilient and razor-sharp.</p>
+                <div class="card-footer">
+                    <span class="card-price">$59.00</span>
+                    <button class="btn-primary btn-acquire">Acquire</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="glass-card stagger-in" data-category="karambit">
+            <div class="card-img-container">
+                <img src="assets/karambit.png" style="filter: brightness(0.2) contrast(1.8);" alt="Phantom Karambit">
+            </div>
+            <div class="card-content">
+                <h3 class="card-title gradient-text">Phantom Claw</h3>
+                <p class="card-desc">Invisible in low light. The ultimate tool for tactical discretion.</p>
+                <div class="card-footer">
+                    <span class="card-price">$65.00</span>
+                    <button class="btn-primary btn-acquire">Acquire</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- Katanas -->
+        <article class="glass-card stagger-in" data-category="katana">
+            <div class="card-img-container">
+                <img src="assets/katana.png" alt="Obsidian Katana">
+            </div>
+            <div class="card-content">
+                <h3 class="card-title gradient-text">Obsidian Katana</h3>
+                <p class="card-desc">Hand-forged obsidian-infused steel. Traditional tachi geometry.</p>
+                <div class="card-footer">
+                    <span class="card-price">$124.00</span>
+                    <button class="btn-primary btn-acquire">Acquire</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="glass-card stagger-in" data-category="katana">
+            <div class="card-img-container">
+                <img src="assets/katana.png" style="filter: grayscale(1) contrast(1.5);" alt="Shadow Katana">
+            </div>
+            <div class="card-content">
+                <h3 class="card-title gradient-text">Shadow Stalker</h3>
+                <p class="card-desc">Matte-charcoal finish. Designed for absolute silence and speed.</p>
+                <div class="card-footer">
+                    <span class="card-price">$135.00</span>
+                    <button class="btn-primary btn-acquire">Acquire</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="glass-card stagger-in" data-category="katana">
+            <div class="card-img-container">
+                <img src="assets/katana.png" style="filter: hue-rotate(200deg) brightness(1.2);" alt="Ice Katana">
+            </div>
+            <div class="card-content">
+                <h3 class="card-title gradient-text">Frozen Whisper</h3>
+                <p class="card-desc">Cobalt-treated blade. Retains a sub-zero edge for eternity.</p>
+                <div class="card-footer">
+                    <span class="card-price">$128.00</span>
+                    <button class="btn-primary btn-acquire">Acquire</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="glass-card stagger-in" data-category="katana">
+            <div class="card-img-container">
+                <img src="assets/katana.png" style="filter: sepia(0.8) hue-rotate(-50deg) brightness(1.1);" alt="Gold Katana">
+            </div>
+            <div class="card-content">
+                <h3 class="card-title gradient-text">Gilded Honor</h3>
+                <p class="card-desc">24k GOLD inlay. A masterpiece for the most prestigious armory.</p>
+                <div class="card-footer">
+                    <span class="card-price">$145.00</span>
+                    <button class="btn-primary btn-acquire">Acquire</button>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <footer>
+        <h2 class="footer-logo gradient-text">AETHELGARD</h2>
+        <p class="footer-tag">THE OBSIDIAN FORGE</p>
+        <div class="footer-links">
+            <a href="index.html">Origin</a>
+            <a href="collection.html">Vault</a>
+            <a href="story.html">Heritage</a>
+            <a href="configurator.html">Forge</a>
+        </div>
+        <p class="copyright">&copy; 2026 Aethelgard Forge. All Rights Reserved.</p>
+    </footer>
+
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h2 class="gradient-text">Your Armory</h2>
+            <button class="close-cart-btn" id="close-cart-btn">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <p class="empty-cart">No blades acquired yet.</p>
+        </div>
+        <div class="cart-footer">
+            <button class="btn-primary" onclick="window.location.href='checkout.html'">Proceed to Acquisition</button>
+        </div>
+    </aside>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

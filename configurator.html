@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aethelgard | The Forge Configurator">
+    <title>Forge | Aethelgard Configurator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="webgl-container"></div>
+
+    <nav class="navbar scrolled">
+        <a href="index.html" class="logo">AETHELGARD</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Origin</a></li>
+            <li><a href="collection.html">The Vault</a></li>
+            <li><a href="story.html">Heritage</a></li>
+            <li><a href="configurator.html" class="active">Forge</a></li>
+        </ul>
+        <button id="open-cart-btn" class="nav-cart-btn">Vault [0]</button>
+    </nav>
+
+    <main class="configurator-container" id="configurator-container">
+        <!-- Visual Presentation -->
+        <div class="config-visual">
+            <div class="visual-pane" id="pane-1">
+                <img src="assets/base_blade.png" alt="Blade Configuration" id="config-blade-img" data-material="none">
+            </div>
+            <div class="visual-pane compare-only" id="pane-2">
+                <img src="assets/base_blade.png" alt="Compare Blade" id="compare-blade-img" data-material="obsidian">
+            </div>
+        </div>
+
+        <!-- Controls Panel -->
+        <div class="config-panel glass-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.5rem;">
+                <h2 class="gradient-text" style="font-size: 2.2rem; margin:0;" id="configurator-title">Cerebus Balisong</h2>
+                <button id="toggle-compare-btn" class="nav-cart-btn" style="font-size: 0.7rem; padding: 0.4rem 1rem;">Compare Layout</button>
+            </div>
+            <p class="card-desc" style="margin-bottom: 2rem;">Design your masterpiece. Every structural alignment is precision-machined.</p>
+
+            <div class="config-options">
+                <h4 style="margin-bottom: 0.8rem; color: var(--text-primary); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px;">Blade Finish <span class="compare-only" style="color:var(--text-muted); font-size:0.7rem;">[Left]</span></h4>
+                <div class="config-btn-group" id="material-configs">
+                    <button class="config-btn active" data-target="config-blade-img" data-filter="none">Raw Tungsten</button>
+                    <button class="config-btn" data-target="config-blade-img" data-filter="obsidian">Obsidian Matte</button>
+                    <button class="config-btn" data-target="config-blade-img" data-filter="chrome">Chromium Silver</button>
+                    <button class="config-btn" data-target="config-blade-img" data-filter="violet">Hyper-Violet Alloy</button>
+                    <button class="config-btn" data-target="config-blade-img" data-filter="gold">Guilded Brass</button>
+                </div>
+            </div>
+
+            <div class="config-options compare-only" style="margin-top: 2rem;">
+                <h4 style="margin-bottom: 0.8rem; color: var(--text-primary); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px;">Compare Finish <span class="compare-only" style="color:var(--text-muted); font-size:0.7rem;">[Right]</span></h4>
+                <div class="config-btn-group" id="material-configs-compare">
+                    <button class="config-btn config-comp-btn" data-target="compare-blade-img" data-filter="none">Raw Tungsten</button>
+                    <button class="config-btn config-comp-btn active" data-target="compare-blade-img" data-filter="obsidian">Obsidian Matte</button>
+                    <button class="config-btn config-comp-btn" data-target="compare-blade-img" data-filter="chrome">Chromium Silver</button>
+                    <button class="config-btn config-comp-btn" data-target="compare-blade-img" data-filter="violet">Hyper-Violet Alloy</button>
+                    <button class="config-btn config-comp-btn" data-target="compare-blade-img" data-filter="gold">Guilded Brass</button>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-glass); padding-top: 2rem;">
+                <span class="card-price" style="font-size: 2rem;" id="config-price">$350</span>
+                <button class="btn-primary" id="btn-forge-acquire">Forge & Acquire</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Global Cart Drawer -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h2 class="gradient-text">Your Armory</h2>
+            <button class="close-cart-btn" id="close-cart-btn">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <p class="empty-cart">No blades acquired yet.</p>
+        </div>
+        <div class="cart-footer">
+            <button class="btn-primary" style="width:100%">Proceed to Checkout</button>
+        </div>
+    </aside>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

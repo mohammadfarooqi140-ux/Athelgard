@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aethelgard | The Heritage">
+    <title>Heritage | Aethelgard Forge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="webgl-container"></div>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">AETHELGARD</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Origin</a></li>
+            <li><a href="collection.html">The Vault</a></li>
+            <li><a href="story.html" class="active">Heritage</a></li>
+            <li><a href="configurator.html">Forge</a></li>
+        </ul>
+        <button id="open-cart-btn" class="nav-cart-btn">Vault [0]</button>
+    </nav>
+
+    <header class="story-hero">
+        <!-- Interactive Spark/Forge Video Background -->
+        <video autoplay muted loop playsinline class="hero-video-bg">
+            <source src="https://cdn.pixabay.com/video/2020/08/17/47372-450917269_large.mp4" type="video/mp4">
+        </video>
+        <h1 class="hero-title gradient-text">Out of the Black</h1>
+    </header>
+
+    <main class="story-content">
+        <p>Before an Aethelgard blade ever meets the whetstone, it exists as a concept of pure shadow. We believe that a knife should not merely be a tool, but an extension of aesthetic intent. We source exclusively from boutique tungsten and carbon foundries.</p>
+
+        <h2 class="gradient-text">The Unyielding Grain</h2>
+        <p>Observe the microscopic perfection beneath the surface. True high-carbon Damascus steel requires atmospheric control so precise that the margin of error is virtually nonexistent. The resulting grain structure forms an incredibly dense, obsidian-like webbing.</p>
+        
+        <div class="material-showcase">
+            <img src="assets/damascus.png" alt="Macroscopic Damascus Steel Grain">
+            <div class="material-text">
+                <h3 class="gradient-text">Carbon Weave Macro</h3>
+                <p style="margin:0; font-size: 0.9rem;">Shot at 400x magnification. Note the molecular alignment that provides our legendary tension threshold.</p>
+            </div>
+        </div>
+
+        <p>Each curve on our Karambit or Balisong models is computer-machined and then hand-filed over a period of 72 hours bare minimum. The result is a glass-like finish that retains the intimidating aura of raw, unpolished iron.</p>
+    </main>
+
+    <footer>
+        <h2 class="footer-logo gradient-text">AETHELGARD</h2>
+        <p class="copyright">&copy; 2026 Aethelgard Forge.</p>
+    </footer>
+
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h2 class="gradient-text">Your Armory</h2>
+            <button class="close-cart-btn" id="close-cart-btn">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <p class="empty-cart">No blades acquired yet.</p>
+        </div>
+        <div class="cart-footer">
+            <button class="btn-primary" style="width:100%">Proceed to Checkout</button>
+        </div>
+    </aside>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

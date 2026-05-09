@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aethelgard | Acquisition Checkout">
+    <title>Checkout | Aethelgard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .checkout-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 8rem 2rem 2rem;
+            position: relative;
+        }
+
+        .checkout-glass {
+            background: rgba(15, 15, 18, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 16px;
+            padding: 3rem;
+            max-width: 900px;
+            width: 100%;
+            display: flex;
+            gap: 3rem;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8), inset 0 0 0 1px rgba(255,255,255,0.05);
+            z-index: 10;
+            animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .left-column { flex: 1.5; }
+        .right-column {
+            flex: 1;
+            background: rgba(0,0,0,0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.03);
+        }
+
+        .checkout-title {
+            font-family: var(--font-heading, "Cinzel", serif);
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff 0%, #a0aab5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .checkout-subtitle {
+            color: #888;
+            margin-bottom: 2.5rem;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .form-group { margin-bottom: 1.5rem; }
+        .label {
+            display: block; font-size: 0.75rem; text-transform: uppercase;
+            letter-spacing: 2px; color: #aaa; margin-bottom: 0.5rem;
+        }
+        .input-field {
+            width: 100%; background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;
+            padding: 1rem; color: #fff; font-size: 1rem; transition: all 0.3s ease; outline: none;
+        }
+        .input-field:focus {
+            border-color: #a0aab5; box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .order-summary-title {
+            font-size: 1.2rem; margin-bottom: 1.5rem; border-bottom: 1px dashed rgba(255,255,255,0.1);
+            padding-bottom: 1rem; text-transform: uppercase; letter-spacing: 2px;
+        }
+
+        .summary-row {
+            display: flex; justify-content: space-between; margin-bottom: 1rem;
+            font-size: 0.9rem; color: #ccc;
+        }
+
+        .total-row {
+            display: flex; justify-content: space-between; margin-top: 2rem; padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1); font-size: 1.5rem; color: #fff; font-weight: bold;
+        }
+
+        .btn-checkout {
+            width: 100%; padding: 1.2rem; margin-top: 2rem;
+            background: linear-gradient(145deg, #1f2024 0%, #121214 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; color: var(--accent-silver);
+            font-weight: 700; text-transform: uppercase; letter-spacing: 2px;
+            cursor: pointer; transition: all 0.3s ease;
+        }
+
+        .btn-checkout:hover {
+            background: #fff; color: #000; box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); transform: translateY(-2px);
+        }
+
+        .scanlines {
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1));
+            background-size: 100% 4px; pointer-events: none; z-index: 5; opacity: 0.3;
+        }
+
+        @media (max-width: 800px) {
+            .checkout-glass { flex-direction: column; padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div id="webgl-container"></div>
+
+    <nav class="navbar scrolled">
+        <a href="index.html" class="logo">AETHELGARD</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Origin</a></li>
+            <li><a href="collection.html">The Vault</a></li>
+            <li><a href="story.html">Heritage</a></li>
+            <li><a href="configurator.html">Forge</a></li>
+        </ul>
+    </nav>
+
+    <div class="checkout-wrapper">
+        <div class="scanlines"></div>
+        <div class="checkout-glass">
+            <div class="left-column">
+                <h1 class="checkout-title">Secure Transmission</h1>
+                <p class="checkout-subtitle">Finalize your acquisition of the God-Tier asset.</p>
+                
+                <form id="secure-checkout-form" onsubmit="event.preventDefault();">
+                    <div class="form-group">
+                        <label class="label">Email Address</label>
+                        <input type="email" class="input-field" placeholder="commander@aethelgard.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="label">Card Information</label>
+                        <input type="text" class="input-field" placeholder="XXXX XXXX XXXX XXXX" required>
+                    </div>
+                    <div style="display: flex; gap: 1rem;">
+                        <div class="form-group" style="flex: 1;">
+                            <label class="label">Expiry</label>
+                            <input type="text" class="input-field" placeholder="MM/YY" required>
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label class="label">CVC</label>
+                            <input type="text" class="input-field" placeholder="123" required>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="right-column">
+                <h3 class="order-summary-title">Asset Summary</h3>
+                <div class="summary-row">
+                    <span>Aethelgard Forge License</span>
+                    <span>$49.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Taxes & Encryptions</span>
+                    <span>$0.00</span>
+                </div>
+                <div class="total-row">
+                    <span>Total</span>
+                    <span style="color: var(--accent-silver)">$49.00</span>
+                </div>
+                <button class="btn-checkout" onclick="alert('Transmission Complete!')">
+                    Authorize Payment
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
