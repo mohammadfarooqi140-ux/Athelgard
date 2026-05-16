@@ -465,7 +465,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const title = card.querySelector('.card-title') || card.querySelector('h2');
             const price = card.querySelector('.card-price');
             // Try to find image container related to this card
-            let imgSrc = 'assets/base_blade.png';
+            let imgSrc = 'https://picsum.photos/seed/blade/1200/800';
             if (btn.id === 'btn-forge-acquire') {
                 imgSrc = document.getElementById('config-blade-img').src;
             } else if (card.querySelector('img')) {
